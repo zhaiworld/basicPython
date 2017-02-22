@@ -25,6 +25,7 @@ def geturllist(url):
     return url_list
 
 def download(down_url):
+    print down_url
     name = str(time.time())[:-3]+"_"+re.sub('.+?/','',down_url)
     print name
     urllib.urlretrieve(down_url,"C:\\temp\\scrap_girl\\"+name)
@@ -41,7 +42,7 @@ def getpageurl():
 
 if __name__ =='__main__':
     jobs = []
-    pageurl = getpageurl()[::-1]
+    pageurl = getpageurl()
     #进行图片下载
     for i in pageurl:
         for downurl in geturllist(i):
